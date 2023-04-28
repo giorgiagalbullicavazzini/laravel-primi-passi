@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $title = 'Welcome!';
+    $user = rand(1, 999);
+    $bye = 'See you tomorrow.';
+
+    // * Put data into an array
+    $data = compact('title', 'user', 'bye');
+
+    return view('home', $data);
 });
